@@ -15,7 +15,8 @@ func worker(id int, wg *sync.WaitGroup) {
 
 func main() {
 	var wg sync.WaitGroup
-	for i := 1; i < 4; i++ {
+	countWorker := 3
+	for i := 1; i <= countWorker; i++ {
 		wg.Add(1)
 		go worker(i, &wg)
 	}
